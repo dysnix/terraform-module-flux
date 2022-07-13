@@ -45,11 +45,6 @@ variable "gserviceaccount" {
   description = "service account for sops decryption"
 }
 
-variable "image_reflector_gserviceaccount" {
-  type        = string
-  description = "service account for image reflector"
-}
-
 variable "cluster_ca_certificate" {
   type        = string
   description = "cluster ca certificate"
@@ -63,4 +58,23 @@ variable "cluster_host" {
 variable "cluster_token" {
   type        = string
   description = "cluster token"
+}
+
+## IMAGE REFLECTOR
+variable "image_reflector_enabled" {
+  type = bool
+  default = false
+  description = "enable image-reflector controller"
+}
+
+variable "image_reflector_gserviceaccount" {
+  type        = string
+  description = "service account for image reflector"
+}
+
+## IMAGE AUTOMATION
+variable "image_automation_enabled" {
+  type = bool
+  default = false
+  description = "enable image-automation controller"
 }

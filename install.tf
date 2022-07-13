@@ -1,6 +1,13 @@
+locals {
+  components_extra = compact([
+    "${var.image_reflector_enabled == true ?   "image-reflector-controller": ""}",
+    "${var.image_automation_enabled == true ?   "image-automation-controller": ""}",
+    ])
+}
+
 data "flux_install" "main" {
   target_path = var.target_path
-  components_extra = ["image-reflector-controller","image-automation-controller"]
+  components_extra = local.components_extra
 }
 
 resource "kubernetes_namespace" "flux_system" {
