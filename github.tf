@@ -1,8 +1,3 @@
-provider "github" {
-  owner = var.repo_owner
-  token = var.github_token
-}
-
 # To make sure the repository exists and the correct permissions are set.
 data "github_repository" "main" {
   full_name = "${var.repo_owner}/${var.repo_name}"

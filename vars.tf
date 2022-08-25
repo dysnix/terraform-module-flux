@@ -13,11 +13,6 @@ variable "repo_name" {
   description = "repo_url"
 }
 
-variable "github_token" {
-  type        = string
-  description = "github_token"
-}
-
 variable "branch" {
   type        = string
   default = "main"
